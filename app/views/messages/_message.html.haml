@@ -18,9 +18,15 @@
               %button.b_edit_message{ 'data-id': message.id }
                 Edit Message IF
             - elsif current_user.nil?
-              = button_to 'Delete Message', [message],  method: :delete, id: "public-msg-delete-#{message.id}"
+              %form.button_to{:action => "/messages/#{message.id}", :method => "post", id: "public-msg-delete-#{message.id}"}
+                %input{:name => "_method", :type => "hidden", :value => "delete"}/
+                %input{:type => "submit", :value => "Delete Message", name: "Delete message"}
+                %input{:name => "authenticity_token", :type => "hidden", :value => "", id: "public-msg-delete-token-#{message.id}"}/
               %button.b_edit_message{ 'data-id': message.id, id: "public-msg-edit-#{message.id}" }
                 Edit Message
+              -#= button_to 'Delete Message', [message],  method: :delete, id: "public-msg-delete-#{message.id}"
+              -#%button.b_edit_message{ 'data-id': message.id, id: "public-msg-edit-#{message.id}" }
+              -#  Edit Message
 
 
 

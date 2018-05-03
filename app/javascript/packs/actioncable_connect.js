@@ -114,6 +114,17 @@ $(document).ready(function(){
                     $("#public-msg-delete-" + data['message_id']).hide();
                     $("#public-msg-edit-" + data['message_id']).hide();
                 }
+
+                function getAuthenticityToken() {
+                    var result = '';
+                    $("form#new_message :input").each(function(){
+                        if ($(this).attr("name") === "authenticity_token") {
+                            result = $(this).val();
+                        }
+                    });
+                    return result;
+                }
+                $("#public-msg-delete-token-" + data['message_id']).val(getAuthenticityToken());
                 return messages_to_bottom();
             },
             send_message: function(message, chat_room_id) {
