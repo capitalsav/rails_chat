@@ -102,41 +102,17 @@ $(document).ready(function(){
                     });
                     var result = '';
                     splitedCookies.forEach(function (splitedOneCookie, i, arr) {
-                        // console.log("000000000000000");
-                        // console.log(splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id');
                         if (splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id') {
-                            // console.log(splitedOneCookie[1]);
                             result = splitedOneCookie[1];
                         }
                     });
                     return result;
                 }
-                // console.log("=======================================");
-                // console.log(typeof (data['message_user_id']));
-                // console.log("=======================================");
-                // console.log("---------------------------------------");
-                // console.log(typeof (getUserIdFromCookies()));
-                // console.log("---------------------------------------");
-                // console.log("---------------------------------------");
-                // console.log(parseInt(data['message_user_id'], 10) === getUserIdFromCookies());
-                // console.log(data['message_user_id'] === parseInt(getUserIdFromCookies(), 10));
-
-                // console.log(data['message']);
-
-                // console.log(data['message_id']);
-
-                // console.log(typeof (data['message_user_id']));
-                // console.log("---------------------------------------");
-                // console.log(typeof (parseInt(getUserIdFromCookies(), 10)));
-                // console.log("========================================");
 
                 messages.append(data['message']);
                 if (data['message_user_id'] !== parseInt(getUserIdFromCookies(), 10)) {
-                    // console.log($('#public-msg-delete-' + data['message_id']));
-                    // console.log($('#public-msg-edit-' + data['message_id']));
-
-                    $('#public-msg-delete-' + data['message_id']).hide();
-                    $('#public-msg-edit-' + data['message_id']).hide();
+                    $("#public-msg-delete-" + data['message_id']).hide();
+                    $("#public-msg-edit-" + data['message_id']).hide();
                 }
                 return messages_to_bottom();
             },
