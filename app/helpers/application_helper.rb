@@ -1,9 +1,7 @@
 module ApplicationHelper
-  def no_header_page(controller_name, action_name)
-    controller_name == 'private_chat_rooms' && action_name == 'show'
-  end
-
-  def no_footer_page(controller_name, action_name)
-    controller_name == 'private_chat_rooms' && action_name == 'show'
+  def render_header_footer(controller_name, action_name)
+    controller_name == 'devise/sessions' && action_name == 'new' ||
+        controller_name == 'users' && action_name == 'new' ||
+        controller_name == 'static_pages' && action_name == 'about'
   end
 end

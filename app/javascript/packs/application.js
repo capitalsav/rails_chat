@@ -20,7 +20,7 @@ import 'packs/actioncable_connect'
 import 'style/application.scss'
 import 'images/default_avatar.png'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
 console.log('Hello World from Webpacker');
 
 
