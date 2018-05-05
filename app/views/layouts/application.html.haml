@@ -7,12 +7,13 @@
     = csrf_meta_tags
     -#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     -#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    -#= javascript_pack_tag 'application'
-    -#= stylesheet_pack_tag 'application'
+    -#= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:href => "https://fonts.googleapis.com/css?family=Kreon", :rel => "stylesheet"}/
   %body
-    = render 'layouts/header' unless no_header_page(controller.controller_name, controller.action_name)
-    = yield
-    = render 'layouts/footer' unless no_footer_page(controller.controller_name, controller.action_name)
+    %div#root
+    -#= render 'layouts/header' unless no_header_page(controller.controller_name, controller.action_name)
+    -#= yield
+    -#= render 'layouts/footer' unless no_footer_page(controller.controller_name, controller.action_name)
+  = stylesheet_pack_tag 'application'
+  = javascript_pack_tag 'application'

@@ -7,6 +7,9 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../components/App'
 import 'jquery/src/jquery'
 import 'jquery-ujs/src/rails'
 import 'bootstrap/dist/css/bootstrap.css';
@@ -17,5 +20,7 @@ import 'packs/actioncable_connect'
 import 'style/application.scss'
 import 'images/default_avatar.png'
 
+ReactDOM.render(<App />, document.getElementById('root'));
 console.log('Hello World from Webpacker');
+
 
