@@ -54,13 +54,9 @@
   color: gray;
 }
 
-#sign-up-username-input {
-  margin-top: 15px;
-}
-
 .auth-submit {
   margin-top: 5px;
-  margin-bottom: 15px !important;
+  margin-bottom: 45px !important;
   height: 40px;
   font-weight: bolder !important;
   font-size: large !important;
@@ -191,4 +187,12 @@ input[class="auth-input"]:focus {
   margin-bottom: 0px !important;
   font-weight: bolder;
   font-size: large;
+}
+
+#sign-up-username-input {
+  margin-top: 50px !important;
+}
+
+#login-input {
+  margin-top: 50px !important;
 }
