@@ -1,0 +1,36 @@
+.about-main-row {
+  margin-top: 100px;
+}
+
+.about-title {
+  font-weight: bolder;
+}
+
+.about-text {
+  font-weight: 600;
+  font-size: 16pt;
+}
+
+.who-we-are {
+  font-weight: bolder;
+  margin-top: 25px;
+}
+
+.about-images-row {
+  margin-top: 20px;
+}
+
+.about-image-col {
+  margin-bottom: 20px;
+  height: 450px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .about-image-col {
+    height: 300px;
+  }
+}

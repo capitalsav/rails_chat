@@ -1,1 +1,19 @@
-%h1 About Chat
+.container
+  .row.about-main-row
+    .col-xs-12.col-xs-offset-0.col-sm-8.col-sm-offset-2
+      %h1.text-center.about-title Socket Chat
+      %p.text-center.about-text This is a simple socket chat, which let you to talk with your family, friends and colleagues. You can write messages to the private one to one chat, have conversation in multiple private and public chat.
+      %p.text-center.about-text In this chat we use RubyOnRails with React.
+      %p.text-center.about-text Feel free to sign up, log in and write the messages. We hope you will enjoy it.
+      %h2.text-center.who-we-are Who we are?
+      %p.text-center.about-text We are a small team, that make this free and open source chat to let you try it and to let us have a good experience in chat creation.
+.container-fluid
+  .row.about-images-row
+    .col-xs-12.col-sm-6.about-image-col
+      = image_tag asset_pack_path('images/about1.jpg')
+    .col-xs-12.col-sm-6.about-image-col
+      = image_tag asset_pack_path('images/about2.jpg')
+    .col-xs-12.col-sm-6.about-image-col
+      = image_tag asset_pack_path('images/about3.jpg')
+    .col-xs-12.col-sm-6.about-image-col
+      = image_tag asset_pack_path('images/about4.jpg')

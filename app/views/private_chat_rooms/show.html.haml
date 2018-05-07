@@ -19,13 +19,17 @@
       .row.chat-head-row
       .row.chat-message-row#private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
         = render @private_chat_room.private_messages
-      .chat-message-form-row
+      .row.chat-message-form-row
         = form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
-          = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
-          .input-group.private-chat-input-group
+          .col-xs-10.col-sm-11
+            = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
+            -#.input-group.private-chat-input-group
+            -#  = f.text_area :content, class: 'form-control private-message-text-area'
+            -#  %span.input-group-btn
+            -#    = f.submit 'Post', class: 'btn btn-warning btn-send-private-message'
             = f.text_area :content, class: 'form-control private-message-text-area'
-            %span.input-group-btn
-              = f.submit 'Post', class: 'btn btn-warning btn-send-private-message'
+          .col-xs-2.col-sm-1
+            = f.submit 'Post', class: 'btn btn-warning btn-send-private-message'
 
 
 

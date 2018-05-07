@@ -1,42 +1,15 @@
 .header-main-navbar {
-  background-color: #337ab7;
-  border-color: #337ab7 !important;
   border-radius: 0px !important;
-  a {
-    color: white;
-  }
+  margin-bottom: 0px;
 }
 
 .company-name {
-  color: white;
   font-weight: 300;
   font-size: x-large;
-  border-right: solid white thin;
   font-family: 'Kreon', serif;
-}
-
-.navbar-toggle {
-  .icon-bar {
-    background-color: white;
-  }
 }
 
 .header-menu-item {
   font-family: 'Kreon', serif;
-}
-
-.header-menu-item:hover {
-  background-color: #3e4551 !important;
-}
-
-@media only screen and (min-width : 768px) and (max-width: 778px) {
-  .company-name {
-    width: 223px;
-  }
-}
-
-@media only screen and (min-width : 779px) {
-  .company-name {
-    width: 235px;
-  }
+  font-weight: bolder;
 }
