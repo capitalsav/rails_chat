@@ -1,4 +1,4 @@
-.website-content
+.website-content.auth-page-content
   .container
     .row
       .col-xs-12
@@ -23,6 +23,6 @@
                   Choose Avatar
               \#{f.file_field :avatar, id: 'avatar-sign-up'}
           .actions
-            = f.submit 'Sign up', class: 'btn btn-default auth-submit'
+            = f.submit 'Sign up', class: 'btn btn-success auth-submit'
         .text-center.auth-links
           = render "devise/shared/links"

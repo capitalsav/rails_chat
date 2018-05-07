@@ -1,4 +1,4 @@
-.website-content
+.website-content.auth-page-content
   .container
     .row
       .col-xs-12
@@ -8,11 +8,7 @@
             = f.text_field :login, class: 'auth-input', id: 'login-input', placeholder: 'Login'
           .field
             = f.password_field :password, autocomplete: "off", class: 'auth-input', id: 'login-pwd-input', placeholder: 'Password'
-          - if devise_mapping.rememberable?
-            .field.remember-me
-              = f.check_box :remember_me
-              = f.label :remember_me
           .actions
-            = f.submit "Log in", class: 'btn btn-default auth-submit'
+            = f.submit "Log in", class: 'btn btn-success auth-submit'
         .text-center.auth-links
           = render "devise/shared/links"
