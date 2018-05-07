@@ -4,5 +4,4 @@ class StaticPagesController < ApplicationController
   def about
     redirect_back fallback_location: root_path if user_signed_in?
   end
-
 end

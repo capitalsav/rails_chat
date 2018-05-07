@@ -29,13 +29,9 @@
   height: 40px;
   margin-bottom: 10px;
   padding-left: 10px;
-  //background-color: #337ab7;
   color: black;
   border: 1px solid gray;
   border-radius: 3px;
-  //border: none;
-  //border-bottom: 3px solid rgba(255, 255, 255, .3) !important;
-  //transition:border-bottom 0.4s linear;
 }
 
 .auth-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -84,22 +80,6 @@ input[id="sign-up-pwd-input"]:focus + .pwd-tooltip-text{
   visibility: visible;
   opacity:1;
 }
-
-input[class="auth-input"]:focus {
-  //outline: none;
-  //border-bottom: 3px solid rgba(255, 255, 255, .99) !important;
-}
-
-//input:-webkit-autofill {
-//  -webkit-text-fill-color: white !important;
-//  -webkit-box-shadow: inset 0 0 0px 9999px #337ab7 !important;
-//}
-//input:-webkit-autofill,
-//input:-webkit-autofill:hover,
-//input:-webkit-autofill:focus,
-//input:-webkit-autofill:active {
-//  transition: background-color 5000s ease-in-out 0s;
-//}
 
 .auth-links {
   margin-top: 10px;
@@ -150,8 +130,6 @@ input[class="auth-input"]:focus {
   position: relative;
   overflow: hidden;
   width: 280px;
-  //margin-left: 1.5%;
-  //margin-right: 1.5%;
   margin-bottom: 10px !important;
   background-color: #EEE;
 
