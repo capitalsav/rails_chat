@@ -23,18 +23,18 @@
 }
 
 .chat-message-row {
-  height: calc(93% - 44px);
+  height: calc(93% - 90px);
   overflow-y: auto;
 }
 
 .chat-message-form-row {
-  height: 44px;
+  height: 90px;
   background-color: #434753;
-  position: fixed;
-  margin-left: -15px;
+  //position: fixed;
+  //margin-left: -15px;
   bottom: 0;
-  padding-right: 5px;
-  padding-left: 5px;
+  //padding-right: 5px;
+  //padding-left: 5px;
 }
 
 #private_new_message {
@@ -46,7 +46,7 @@
 }
 
 .private-message-text-area {
-  height: 34px !important;
+  height: 80px !important;
   resize: none;
 }
 
@@ -122,6 +122,10 @@
 
 .chat-user-name {
   font-weight: bolder;
+}
+
+.btn-send-private-message {
+  border-radius: 50%;
 }
 
 
