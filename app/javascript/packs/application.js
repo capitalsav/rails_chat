@@ -9,7 +9,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../components/App';
 import 'jquery/src/jquery';
 import 'jquery-ujs/src/rails';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -28,3 +27,7 @@ import 'images/about4.jpg';
 console.log('Hello World from Webpacker');
 
 
+// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true)
+var ReactRailsUJS = require("react_ujs")
+ReactRailsUJS.useContext(componentRequireContext)

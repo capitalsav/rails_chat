@@ -15,21 +15,19 @@
           %li.divider{:role => "separator"}
           %li
             %a{:href => "#"} Separated link
-    .col-xs-12.col-sm-8.col-md-9.col-lg-10.chat-messages-col
-      .row.chat-head-row
-      .row.chat-message-row#private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
-        = render @private_chat_room.private_messages
-      .row.chat-message-form-row
-        = form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
-          .col-xs-10.col-sm-11
-            = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
-            -#.input-group.private-chat-input-group
-            -#  = f.text_area :content, class: 'form-control private-message-text-area'
-            -#  %span.input-group-btn
-            -#    = f.submit 'Post', class: 'btn btn-warning btn-send-private-message'
-            = f.text_area :content, class: 'form-control private-message-text-area'
-          .col-xs-2.col-sm-1
-            = f.submit 'Post', class: 'btn btn-warning btn-send-private-message'
+    = react_component("PrivateMessages", { greeting: "Hello", csrf_token: form_authenticity_token, messages: @messages, current_user_id: current_user.id }, {style: 'height: 100%;'})
+    -#= react_component("PrivateMessages", { greeting: "Hello", csrf_token: form_authenticity_token, messages: [1, 2, 3], current_user: current_user }, {style: 'height: 100%;'})
+    -#.col-xs-12.col-sm-8.col-md-9.col-lg-10.chat-messages-col
+    -#  .row.chat-head-row
+    -#  .row.chat-message-row#private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
+    -#    = render @private_chat_room.private_messages
+    -#  .row.chat-message-form-row
+    -#    = form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
+    -#      .col-xs-10.col-sm-11
+    -#        = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
+    -#        = f.text_area :content, class: 'form-control private-message-text-area'
+    -#      .col-xs-2.col-sm-1
+    -#        = f.submit 'Post', class: 'btn btn-warning btn-send-private-message'
 
 
 

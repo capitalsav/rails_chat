@@ -1,8 +1,15 @@
 class PrivateChatRoomsController < ApplicationController
-
   def show
     @private_chat_room = PrivateChatRoom.includes(:private_messages).find(params[:id])
-    @message = PrivateMessage.new
+    @messages = @private_chat_room.private_messages.map do |msg|
+      { id: msg.id,
+        content: msg.content,
+        user_id: msg.user_id,
+        user_name: User.find(msg.user_id).name,
+        created_at: msg.created_at,
+        avatar: msg.user.avatar }
+    end
+    # @message = PrivateMessage.new
     authorize @private_chat_room
   end
 
