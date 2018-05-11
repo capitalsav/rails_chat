@@ -1,14 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Avatar from "./Avatar";
+// import Avatar from "./Avatar";
 class MessagesList extends React.Component {
     render () {
-
-
         return this.props.messages.map((item, index) => (
             <div className="container-fluid" key={index}>
                 <div className="msg-container darker">
-                    <Avatar avatar={item.avatar} currentUserId={this.props.currentUserId} messageUserId={item.user_id}/>
+                    {/*<Avatar avatar={item.avatar} currentUserId={this.props.currentUserId} messageUserId={item.user_id}/>*/}
                     <p className="chat-user-name">
                         {item.user_name}
                     </p>
