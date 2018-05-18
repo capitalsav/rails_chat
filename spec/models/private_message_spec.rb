@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: private_messages
+#
+#  id                   :bigint(8)        not null, primary key
+#  content              :text
+#  user_id              :bigint(8)
+#  private_chat_room_id :bigint(8)
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
 require 'rails_helper'
 RSpec.describe PrivateMessage, type: :model do
   it 'PrivateMessage belong to User' do
