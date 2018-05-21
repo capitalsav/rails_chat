@@ -8,7 +8,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :instagram, :google_oauth2, :github]
-
+  enum role: [ :admin, :member ]
+  belongs_to :workspace
+  has_many :messages
+  has_many :channels
+  validates :encrypted_password, presence: true, length: { minimum: 6 }
+  attr_accessor :email, :password, :password_confirmation, :workspace_attributes
+  accepts_nested_attributes_for :workspace
   # has_many :chat_rooms, dependent: :destroy
   # has_many :messages, dependent: :destroy
   #
@@ -20,16 +26,13 @@ class User < ApplicationRecord
   # has_many :multi_user_private_chat_rooms, through: :multi_user_memberships
   # has_many :multi_user_messages, dependent: :destroy
 
-  enum status: [ :admin, :member ]
-  belongs_to :workspace
-  has_many :messages
-  has_many :channels
+
 
   # validates :username, presence: :true, uniqueness: { case_sensitive: false }
   # validates_format_of :username, with: /^[a-zA-Zа-яА-Я0-9_\._]*$/, :multiline => true
   # validates :email, presence: true, if: :check_provider
   # validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, if: :check_provider
-  validates :encrypted_password, presence: true, length: { minimum: 6 }
+
   # attr_accessor :login
   #
   # def self.find_for_database_authentication(warden_conditions)
