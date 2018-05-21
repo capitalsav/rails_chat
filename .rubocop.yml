@@ -1,0 +1,33 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Include:
+    - app/**/*
+    - spec/**/*
+
+Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - spec/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - spec/**/*

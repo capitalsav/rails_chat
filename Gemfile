@@ -19,7 +19,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -30,57 +29,80 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-gem 'devise'
-gem 'haml-rails'
+# Sass-powered version of Bootstrap 3
 gem 'bootstrap-sass'
-gem 'jquery-rails'
-gem 'redis', '~> 3.2'
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
 gem 'carrierwave', '~> 1.0'
-gem 'mini_magick'
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'
+# Elasticsearch integrations for ActiveModel/Record and Ruby on Rails
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'webpacker', '~> 3.4'
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'pundit'
+# Enables Haml as the templating engine
+gem 'haml-rails'
+# A gem to automate using jQuery with Rails
+gem 'jquery-rails'
+# A ruby wrapper for ImageMagick
+gem 'mini_magick'
+# OmniAuth strategy for authenticating to socials
 gem 'omniauth-facebook', '~> 4.0'
-gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
-gem 'omniauth-instagram'
-gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-instagram'
+gem 'omniauth-twitter', github: 'arunagw/omniauth-twitter'
+# Scaleable authorization system
+gem 'pundit'
+# Integrate React.js with Rails views and controllers, the asset pipeline, or webpacker.
 gem 'react-rails'
-
-
+# A Ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface.
+gem 'redis', '~> 3.2'
+# Webpacker makes it easy to use the JavaScript pre-processor and bundler webpack 4.x.x+ to manage application-like JavaScript in Rails.
+gem 'webpacker', '~> 3.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  # A Ruby gem to load environment variables from `.env`.
+  gem 'dotenv-rails'
+  # Provides the HTTP API described by the WebDriver protocol to communicate with Gecko browsers
   gem 'geckodriver-helper'
+  # WebDriver is a tool for writing automated tests of websites.
+  gem 'selenium-webdriver'
 end
+
 group :test do
-  gem 'simplecov', :require => false
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'shoulda-matchers', '~> 3.1'
-  gem 'rails-controller-testing'
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  # Database Cleaner is a set of strategies for cleaning your database in Ruby.
   gem 'database_cleaner'
+  # A library for setting up Ruby objects as test data.
+  gem 'factory_bot'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+  # This gem brings back assigns to your controller tests as well as assert_template to both controller and integration tests.
+  gem 'rails-controller-testing'
+  # Testing framework
+  gem 'rspec-rails'
+  # Collection of testing matchers extracted from Shoulda
+  gem 'shoulda-matchers', '~> 3.1'
+  # SimpleCov is a code coverage analysis tool for Ruby
+  gem 'simplecov', require: false
 end
+
 group :development do
+  # Add a comment summarizing the current schema
+  gem 'annotate'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
+  # RuboCop is a Ruby static code analyzer.
+  gem 'rubocop', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

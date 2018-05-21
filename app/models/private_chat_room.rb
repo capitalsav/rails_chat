@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: private_chat_rooms
+#
+#  id         :bigint(8)        not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class PrivateChatRoom < ApplicationRecord
   has_one :membership
   has_one :owner, class_name: 'User', through: :membership
