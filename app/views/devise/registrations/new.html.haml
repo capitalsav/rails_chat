@@ -7,20 +7,6 @@
           = devise_error_messages!
           .field
             = f.email_field :email, class: 'auth-input', placeholder: 'Email'
-          .field
-            = f.password_field :password, autocomplete: "off", class: 'auth-input', id: 'sign-up-pwd-input', placeholder: 'Password'
-            - if @minimum_password_length
-              .pwd-tooltip-text
-                = "#{@minimum_password_length} characters minimum"
-          .field
-            = f.password_field :password_confirmation, autocomplete: "off", class: 'auth-input', placeholder: 'Password Confirmation'
-          .field
-            %span.btn.btn-file{id: 'avatar-sign-up-button'}
-              %p#p-sign-up-avatar
-                %span
-                  Choose Avatar
-              \#{f.file_field :avatar, id: 'avatar-sign-up'}
           .actions
             = f.submit 'Sign up', class: 'btn btn-default auth-submit'
         .text-center.auth-links
-          = render "devise/shared/links"

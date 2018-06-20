@@ -1,7 +1,16 @@
 class ConfirmationsController < Devise::ConfirmationsController
-  # private
-  #
-  # def after_confirmation_path_for(resource_name, resource)
-  #   root_url # TODO there will page with user credentials
-  # end
+  def show
+    @user = User.find_by(confirmation_token: params[:confirmation_token])
+  end
+
+  def confirm_user
+    @user = User.find_by_confirmation_token(params[:user][:confirmation_token])
+    if @user.update_attributes(params[:user]) && @user.password_match?
+      @user = User.confirm_by_token(@user.confirmation_token)
+      set_flash_message :notice, :confirmed
+      sign_in_and_redirect('user', @user)
+    else
+      render :show
+    end
+  end
 end

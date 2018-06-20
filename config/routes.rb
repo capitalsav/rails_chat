@@ -5,10 +5,17 @@ Rails.application.routes.draw do
 
   resources :user_workspaces
   resources :workspaces
+
   devise_for :users, controllers: { confirmations: 'confirmations' }
 
-  resources :chat_rooms, only: [:new, :create, :show, :index]
-  resources :private_chat_rooms, except: [:update, :edit, :destroy]
+  devise_scope :user do
+    put 'confirm_user', to: 'confirmations#confirm_user'
+    patch 'confirm_user', to: 'confirmations#confirm_user'
+    get 'confirmation', to: 'confirmations#show'
+  end
+
+  resources :chat_rooms, only: %i[new create show index]
+  resources :private_chat_rooms, except: %i[update edit destroy]
   resources :multi_user_private_chat_rooms
   resources :multi_user_memberships
   mount ActionCable.server => '/cable'
