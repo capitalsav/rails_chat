@@ -2,8 +2,9 @@
   .container
     %i.fa.fa-comment-o.fa-2x
       %span
-        %a.navbar-brand.header-company-name{:href => "#"} Socket Chat
-    %button.navbar-toggler#header-collapse-button{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+        = link_to 'Socket Chat', root_path, class: 'navbar-brand header-company-name', title: 'Socket Chat'
+    %button.navbar-toggler#header-collapse-button{aria: {controls: :navbarSupportedContent, expanded: false, label: 'Toggle navigation'},
+                                                  data: {target: '#navbarSupportedContent', toggle: :collapse}, type: :button}
       %span.navbar-toggler-icon
     .collapse.navbar-collapse
       %ul.navbar-nav.ml-auto
@@ -14,7 +15,8 @@
         %li.nav-item
           %a.nav-link.header-nav-item{:href => "#"} Find Your Workspace
         %li.nav-item.create-wp-nav-item
-          %a.nav-link.header-nav-item{:href => "#"} Create Workspace
+          = link_to 'Create Workspace', new_user_registration_path, class: 'nav-link header-nav-item'
+
 %ul#navbarSide.navbar-side
   %li.navbar-side-header
     .close-header-navbar-sidebar.mr-4.pb-3
@@ -30,8 +32,8 @@
       .d-none.d-sm-block.d-md-block.d-lg-none.mb-5
         %ul.list-inline
           %li.list-inline-item
-            = link_to 'Find Your Workspace',  root_path, class: 'navbar-side-menu-workspace'
+            = link_to 'Find Your Workspace',  '#', class: 'navbar-side-menu-workspace'
             %span.ml-2.mr-1.text-white
               |
           %li.list-inline-item
-            = link_to 'Create Workspace',  root_path, class: 'navbar-side-menu-workspace'
+            = link_to 'Create Workspace',  new_user_registration_path, class: 'navbar-side-menu-workspace'
