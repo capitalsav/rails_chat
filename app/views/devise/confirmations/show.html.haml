@@ -1,17 +1,11 @@
-%h2 Set Password for
-= @user.email
+%h2 Set Password
 
-= form_for(@user, as: resource_name, url: confirm_user_path) do |f|
+= form_for(resource, as: resource_name, url: confirm_path) do |f|
   = devise_error_messages!
 
-  = f.hidden_field :confirmation_token
-  %br
   = f.label :password
   = f.password_field :password
-  %br
   = f.label :password_confirmation
   = f.password_field :password_confirmation
-  %br
+  = f.hidden_field :confirmation_token, value: params[:confirmation_token]
   = f.submit 'Confirm user'
-
-= render 'devise/shared/links'

@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   resources :user_workspaces
   resources :workspaces
 
-  devise_for :users, controllers: { confirmations: 'confirmations' }
+  devise_for :users, controllers: {
+    confirmations: 'confirmations'
+  }
 
   devise_scope :user do
-    put 'confirm_user', to: 'confirmations#confirm_user'
-    patch 'confirm_user', to: 'confirmations#confirm_user'
-    get 'confirmation', to: 'confirmations#show'
+    patch 'confirm', to: 'confirmations#confirm'
   end
 
   resources :chat_rooms, only: %i[new create show index]
