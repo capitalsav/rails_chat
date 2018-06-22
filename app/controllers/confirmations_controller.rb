@@ -1,4 +1,6 @@
 class ConfirmationsController < Devise::ConfirmationsController
+  skip_before_action :authenticate_user!
+
   def show
     return if params[:confirmation_token].blank?
     self.resource = resource_class.find_by(confirmation_token: params[:confirmation_token])

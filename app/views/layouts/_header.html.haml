@@ -3,6 +3,11 @@
     %i.fa.fa-comment-o.fa-2x
       %span
         = link_to 'Socket Chat', root_path, class: 'navbar-brand header-company-name', title: 'Socket Chat'
+    -# temporary solution
+    - if user_signed_in?
+      = link_to 'Logout', destroy_user_session_path, method: :delete
+    - else
+      = link_to 'Login', new_user_session_path
     %button.navbar-toggler#header-collapse-button{aria: {controls: :navbarSupportedContent, expanded: false, label: 'Toggle navigation'},
                                                   data: {target: '#navbarSupportedContent', toggle: :collapse}, type: :button}
       %span.navbar-toggler-icon
