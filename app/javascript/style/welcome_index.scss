@@ -1,16 +1,15 @@
-
 .welcome_main_index{
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-.page-home {
+.welcome-page-index {
   padding-top: 9rem;
   padding-bottom: 4rem;
   position: relative;
 }
 
-h1{
+.welcome-index-main-title {
   font-size: 4.8rem;
   font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
   line-height: 1.05;
@@ -22,7 +21,7 @@ h1{
   color: #323648;
 }
 
-.o-hero__header__copy {
+.welcome-index-main-text {
   color: #5b5e6d;
   max-width: 44rem;
   margin-left: auto;
@@ -32,10 +31,10 @@ h1{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.btn-primary {
+.btn-get-started {
   color: #fff;
-  background-color: #3f46ad;
-  border-color: #3f46ad;
+  background-color: $welcome-link-button-background;
+  border-color: $welcome-link-button-background;
   font-size: .875rem;
   width: 172px;
   height: 57px;
@@ -51,24 +50,24 @@ h1{
   color: #5b5e6d;
   font-size: .875rem;
   margin-top: 15px;
+
+  a {
+    color: $welcome-link-button-background;
+  }
 }
 
-a {
-  color: #3f46ad;
-}
-
-.o-section.v--lighter-gray {
+.welcome-index-lighter-gray {
   background-color: #f5f5f5;
 }
 
-.o-section {
+.welcome-index-section2 {
   overflow: hidden;
   padding: 3rem 0;
   border-top: 1px solid #ebebeb;
   text-align: center;
 }
 
-h2 {
+.welcome-index-section2-title {
   font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
   line-height: 1.2;
   letter-spacing: normal;
@@ -78,7 +77,7 @@ h2 {
   font-weight: bolder;
 }
 
-.u-margin-bottom--x-large{
+.u-margin-bottom--x-large {
   margin: 0;
   margin-bottom: 1rem;
   color: #5b5e6d;
@@ -89,23 +88,29 @@ h2 {
   font-size: 1rem;
 }
 
-.btn-default {
-  color: #1c299d;
+.btn-discover-why {
+  color: $welcome-link-button-background-active;
   background-color: #fff;
-  fill: #1c299d;
-  border-color: #3f46ad;
+  fill: $welcome-link-button-background-active;
+  border-color: $welcome-link-button-background;
   font-size: .875rem;
   width: 172px;
   height: 57px;
   font-weight: bold;
-  border-bottom: 1px solid #3f46ad;
+  border-bottom: 1px solid $welcome-link-button-background;
 }
 
-.btn-default:active {
-  background-color: #1c299d;
+.btn-discover-why:active {
+  background-color: $welcome-link-button-background-active;
+  color: white;
 }
 
-.c-logowall__item{
+.btn-discover-why:focus{
+  background-color: $welcome-link-button-background-active;
+  color: white;
+}
+
+.welcome-index-logo-item {
   border-right: 1px solid #ebebeb;
   margin-bottom: 0!important;
   margin-right: 0!important;
@@ -114,41 +119,41 @@ h2 {
   min-height: 110px;
   width: 100%;
   height: 160px;
+
+  img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-.c-logowall__item img{
-  border: 0;
-  max-width: 100%;
-  height: auto;
-}
-
-.cont_with_imgs{
-  margin-top: 30px;
-}
-
-.c-logowall__item_without_line{
-  border-right: 0;
-}
-
-.c-logowall__item_bottom{
+.welcome-index-logo-item-right-top {
   border-bottom: 1px solid #ebebeb;
 }
 
-.c-logowall__item_bottom_without_line{
+.welcome-index-bottom-logo {
+  border-bottom: none !important;
+}
+
+.container-with-images {
+  margin-top: 30px;
+}
+
+.welcome-index-logo-item-bottom {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.welcome-index-logo-item-bottom-without-line {
   border-right: 0;
 }
 
-.c-logowall__item_in_bottom{
-  height: 110px;
-}
-
-.padding-index{
+.padding-index {
   padding-bottom: 25px;
   padding-top: 50px;
   border-bottom: 1px solid #ebebeb;
 }
 
-.c-cta--signup__headline{
+.welcome-index-try-free {
   font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
   font-weight: 900;
   line-height: 1.45;
@@ -156,20 +161,24 @@ h2 {
   color: #323648;
 }
 
-.c-cta--signup__content{
+.welcome-index-signup-content {
   color: #323648;
   font-size: 1rem;
   font-family: Slack-Averta,appleLogo,sans-serif;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: normal;
+
+  a {
+    color: $welcome-link-button-background;
+  }
 }
 
 .fa-comment-logo {
   font-size: 6em;
 }
 
-.c-nav--footer__list{
+.welcome-nav-footer-list {
   list-style: none;
   margin: 0;
   color: #5b5e6d;
@@ -186,7 +195,7 @@ h2 {
   padding-bottom: 5rem;
 }
 
-.c-nav--footer__listheader{
+.welcome-nav-footer-list-header {
   font-size: .950rem;
   font-family: Slack-Averta,appleLogo,sans-serif;
   font-weight: 800;
@@ -196,19 +205,21 @@ h2 {
   color: #6d6f7b;
 }
 
-.c-nav--footer__listitem{
+.welcome-nav-footer-list-item {
   padding: .30rem 0;
+
+  a{
+    color: #6d6f7b;
+    font-family: Slack-Averta,appleLogo,sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: normal;
+    font-size: .875rem;
+  }
 }
 
-.c-nav--footer__listitem a{
-  color: #6d6f7b;
-  font-family: Slack-Averta,appleLogo,sans-serif;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: normal;
-  font-size: .875rem;
-}
-
-.blue {
-  color: blue;
+@media only screen and (max-width : 575px) {
+  .welcome-index-bottom-logo {
+    border-bottom: 1px solid #ebebeb !important;
+  }
 }
