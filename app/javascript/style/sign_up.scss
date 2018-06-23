@@ -1,13 +1,29 @@
-.sign-up-right {
-  height: 100vh;
-  background-color: #2cc1da;
+.sign-up-left {
   h1 {
-    font-family: Slack-Lato,appleLogo,sans-serif;
+    word-wrap: break-word;
+    letter-spacing: -1px;
+    font-size: 42px;
   }
 }
 
-.find-workspace {
-  padding: 1rem;
-  color: white;
+#chat-logo {
+  a {
+    color: black;
+  }
+}
 
+
+.sign-up-right {
+  height: 100vh;
+  background-color: #2cc1da;
+}
+
+.find-workspace {
+  color: white;
+  h5 {
+    font-family: Slack-Lato,appleLogo,sans-serif;
+  }
+  span {
+    padding-right: 1rem;
+  }
 }

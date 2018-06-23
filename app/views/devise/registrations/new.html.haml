@@ -1,22 +1,29 @@
 .container-fluid
   .row
-    .sign-up-left.col-lg-3.col-md-12.col-sm-12
-      %i.fa.fa-comment-o.fa-2x
-        %span
-          = link_to 'Socket Chat', root_path, class: 'navbar-brand header-company-name', title: 'Socket Chat'
-      %h1.text-center Create a new workspace
-      .form-group
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          = devise_error_messages!
-          %label
-            Your
-            %b email address
-          = f.email_field :email, placeholder: 'mail@example.com', class: 'form-control-lg'
-          .sing-up-button
-            = f.submit 'Next', class: 'btn btn-secondary btn-lg'
-    .col-lg-9.col-md-12.col-sm-12
+    .sign-up-left.col-lg-5.col-md-12.col-sm-12
+      #chat-logo.m-3
+        %i.fa.fa-comment-o.fa-2x
+          %span
+            = link_to 'Socket Chat', root_path, class: 'navbar-brand header-company-name', title: 'Socket Chat'
+      -# TODO need to be centered
+      #sign-up-form.d-flex.align-items-center.justify-content-center
+        .flex-column.pb-5.pt-5
+          %h1.p-2 Create a new workspace
+          .p-2.form-group
+            = form_for(:user, url: registration_path(:user)) do |f|
+              .flex-column.pb-3.pb-lg-5
+                %label
+                  Your
+                  %b email address
+                = f.email_field :email, placeholder: 'mail@example.com', class: 'form-control form-control-lg'
+              .d-flex.justify-content-center
+                = f.submit 'Next', class: 'btn btn-lg sign-up-button' do
+                  %i.fa.fa-arrow-right
+    .col-lg-7.col-md-12.col-sm-12
       .sign-up-right.text-center
-        .find-workspace
-          %span Looking to join an existing workspace?
-          = link_to 'Find workspace.', '#', class: 'btn btn-outline-light btn-lg'
-        = image_tag(asset_pack_path('images/chat-2.png'))
+        .find-workspace.p-2
+          %h5.d-inline.p-2 Looking to join an existing workspace?
+          .d-inline.p-2
+            = link_to 'Find workspace.', '#', class: 'font-weight-bold btn btn-outline-light btn-lg'
+        .align-items-center.justify-content-center
+          = image_tag(asset_pack_path('images/chat-2.png'))
