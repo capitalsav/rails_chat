@@ -1,2 +1,0 @@
-class UserWorkspacesController < ApplicationController
-end
