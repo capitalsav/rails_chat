@@ -11,18 +11,17 @@ import 'jquery/src/jquery'
 import 'jquery-ujs/src/rails'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
-import 'packs/sign_up'
 import 'packs/actioncable_connect'
 import 'packs/header'
 import 'style/application.scss'
 import 'images/default_avatar.png'
 import 'images/home_illo.png'
-import 'images/airbnb.png'
-import 'images/capital_one.png'
-import 'images/los-angeles-times.png'
-import 'images/oracle.png'
-import 'images/target.png'
-import 'images/ticketmaster.png'
+import 'images/welcome_index_logo_1.png'
+import 'images/welcome_index_logo_2.png'
+import 'images/welcome_index_logo_3.png'
+import 'images/welcome_index_logo_4.png'
+import 'images/welcome_index_logo_5.png'
+import 'images/welcome_index_logo_6.png'
 
 console.log('Hello World from Webpacker');
 
