@@ -17,8 +17,9 @@
                   %b email address
                 = f.email_field :email, placeholder: 'mail@example.com', class: 'form-control form-control-lg'
               .d-flex.justify-content-center
-                = f.submit 'Next', class: 'btn btn-lg sign-up-button' do
-                  %i.fa.fa-arrow-right
+                = button_tag type: 'submit', class: 'btn btn-lg sign-up-button' do
+                  Next
+                  %i.fa.fa-arrow-right{aria: {hidden: true}}
     .col-lg-7.col-md-12.col-sm-12
       .sign-up-right.text-center
         .find-workspace.p-2

@@ -19,11 +19,4 @@ class User < ApplicationRecord
   def password_required?
     super if confirmed?
   end
-
-  def password_match?
-    errors[:password] << "can't be blank" if password.blank?
-    errors[:password_confirmation] << "can't be blank" if password_confirmation.blank?
-    errors[:password_confirmation] << 'does not match password' if password != password_confirmation
-    password == password_confirmation && password.present?
-  end
 end

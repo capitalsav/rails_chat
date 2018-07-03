@@ -1,11 +1,17 @@
-%h2 Set Password
-
-= form_for(resource, as: resource_name, url: confirm_path) do |f|
-  = devise_error_messages!
-
-  = f.label :password
-  = f.password_field :password
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
-  = f.hidden_field :confirmation_token, value: params[:confirmation_token]
-  = f.submit 'Confirm user'
+.container-fluid
+  #chat-logo.m-3
+    %i.fa.fa-comment-o.fa-2x
+      %span
+        = link_to 'Socket Chat', root_path, class: 'navbar-brand header-company-name', title: 'Socket Chat'
+  .d-flex.justify-content-center
+    = form_for(resource, as: resource_name, url: confirm_path) do |f|
+      = devise_error_messages!
+      %h1.text-monospace Set your password
+      .form-group
+        = f.label :password, class: 'font-weight-bold'
+        = f.password_field :password, class: 'form-control form-control-lg', placeholder: 'Password', required: true
+      = f.hidden_field :confirmation_token, value: params[:confirmation_token]
+      .d-flex.justify-content-center
+        = button_tag type: 'submit', class: 'btn btn-lg sign-up-button' do
+          Continue
+          %i.fa.fa-arrow-right{aria: {hidden: true}}
