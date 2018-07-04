@@ -1,0 +1,21 @@
+.container-fluid
+  #chat-logo.m-3
+    %i.fa.fa-comment-o.fa-2x
+      %span
+        = link_to 'Socket Chat', root_path, class: 'navbar-brand header-company-name', title: 'Socket Chat'
+  .d-flex.justify-content-center
+    = form_for(@user, url: user_profile_path(@user)) do |f|
+      %h1.text-monospace What's your name?
+      .form-group
+        = f.label :first_name, class: 'font-weight-bold'
+        = f.text_field :first_name, class: 'form-control form-control-lg', placeholder: 'First Name', required: true
+      .form-group
+        = f.label :last_name, class: 'font-weight-bold'
+        = f.text_field :last_name, class: 'form-control form-control-lg', placeholder: 'Last Name', required: true
+      .form-group
+        = f.label :display_name, class: 'font-weight-bold'
+        = f.text_field :display_name, class: 'form-control form-control-lg', placeholder: 'First Name', required: true
+      .d-flex.justify-content-center
+        = button_tag type: 'submit', class: 'btn btn-lg sign-up-button' do
+          Continue to Workspace
+          %i.fa.fa-arrow-right{aria: {hidden: true}}

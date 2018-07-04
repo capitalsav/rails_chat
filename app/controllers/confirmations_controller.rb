@@ -15,7 +15,7 @@ class ConfirmationsController < Devise::ConfirmationsController
       self.resource = resource_class.confirm_by_token(params[resource_name][:confirmation_token])
       set_flash_message :notice, :confirmed
       sign_in(resource)
-      redirect_to edit_user_registration_path
+      redirect_to edit_user_profile_path(resource)
     else
       render :show
     end

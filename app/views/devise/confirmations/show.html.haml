@@ -5,7 +5,6 @@
         = link_to 'Socket Chat', root_path, class: 'navbar-brand header-company-name', title: 'Socket Chat'
   .d-flex.justify-content-center
     = form_for(resource, as: resource_name, url: confirm_path) do |f|
-      = devise_error_messages!
       %h1.text-monospace Set your password
       .form-group
         = f.label :password, class: 'font-weight-bold'

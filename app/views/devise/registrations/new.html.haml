@@ -15,7 +15,7 @@
                 %label
                   Your
                   %b email address
-                = f.email_field :email, placeholder: 'mail@example.com', class: 'form-control form-control-lg'
+                = f.email_field :email, placeholder: 'mail@example.com', class: 'form-control form-control-lg', autofocus: true
               .d-flex.justify-content-center
                 = button_tag type: 'submit', class: 'btn btn-lg sign-up-button' do
                   Next
