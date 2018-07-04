@@ -42,6 +42,7 @@ gem 'mini_magick'
 gem 'webpacker', '~> 3.4'
 gem 'pundit'
 gem 'react-rails'
+gem 'wicked'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
