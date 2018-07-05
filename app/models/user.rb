@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :multi_user_private_chat_rooms, through: :multi_user_memberships
   has_many :multi_user_messages, dependent: :destroy
 
+  private
+
   def password_required?
     super if confirmed?
   end
