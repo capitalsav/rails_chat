@@ -16,8 +16,15 @@
           the moment, so blinded by desire, that they,
           cannot foresee the pain and trouble that,
           are bound to ensue; and equal blame
-        %button.btn.btn-primary.btn-lg.btn-get-started
-          GET STARTED
+        - if user_signed_in?
+          -# TODO this button must redirect to 'get started' page
+          %button.btn.btn-primary.btn-lg.btn-get-started
+            GET STARTED
+        - else
+          .form-inline
+            = form_for(:user, url: registration_path(:user)) do |f|
+              = f.email_field :email, placeholder: 'Email address', class: 'form-control form-control-lg'
+              = f.submit 'GET STARTED', class: 'btn btn-primary btn-lg btn-get-started'
         %p.display-as-mini
           Already using Socket Chat?
           = link_to 'Sign in.', new_user_session_path
