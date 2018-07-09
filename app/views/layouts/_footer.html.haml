@@ -1,3 +1,95 @@
-%footer
+- content_for :footer_layout do
   .container-fluid
-    .row.footer-row
+    .container.container-foot-padding
+      .row
+        .col-1.col-md-1
+          %i.fa.fa-comment-o.fa-comment-logo
+        .col-11.col-md-3
+        .col-6.col-md-2
+          .c-nav-footer-block
+            %p.welcome-nav-footer-list-header Pages
+            %ul.welcome-nav-footer-list
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} About Us
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"}  Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"}  Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"}  Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"}  Lorem ipsum
+        .col-6.col-md-2
+          .c-nav-footer-block
+            %p.welcome-nav-footer-list-header Pages
+            %ul.welcome-nav-footer-list
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Why Socket Chat?
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+        .col-6.col-md-2
+          .c-nav-footer-block
+            %p.welcome-nav-footer-list-header.footer-second-line Pages
+            %ul.welcome-nav-footer-list
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+        .col-6.col-md-2
+          .c-nav-footer-block
+            %p.welcome-nav-footer-list-header.footer-second-line Pages
+            %ul.welcome-nav-footer-list
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+              %li.welcome-nav-footer-list-item
+                %a{:href => "#"} Lorem ipsum
+    .row
+      %nav.navbar.navbar-expand-md.bg-light.navbar-light.custom-footer-navbar
+        .container
+          %ul.navbar-nav.mr-auto.footer-left-ul
+            %li.nav-item
+              %a.footer-text.nav-link{:href => "#"} Lorem
+            %li.nav-item
+              %a.footer-text.nav-link{:href => "#"} Lorem & Ipsum
+            %li.nav-item
+              %a.footer-text.nav-link{:href => "#"} Lorem Ip
+          %ul.navbar-nav.ml-auto.footer-right-ul
+            %li.nav-item.dropup
+              %a#navbardrop.nav-link.footer-text.footer-language-select.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                English (US)
+              .dropdown-menu
+                %a.footer-text.dropdown-item{:href => "#"} English (US)
+                %a.footer-text.dropdown-item{:href => "#"} Русский
+                %a.footer-text.dropdown-item{:href => "#"} Украинский
+            %li
+              %i.fa.fa-twitter.footer-fa.ml-1.mr-1
+            %li
+              %i.fa.fa-facebook-official.footer-fa.ml-1.mr-1
+            %li
+              %i.fa.fa-youtube-play.footer-fa.ml-1.mr-1
+            %li
+              %i.fa.fa-linkedin-square.footer-fa.ml-1.mr-1
