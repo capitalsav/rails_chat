@@ -90,6 +90,11 @@
   color: white;
   font-size: 18pt;
   font-family: $project-font;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .navbar-side-sign-in {
