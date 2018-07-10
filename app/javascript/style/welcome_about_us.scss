@@ -1,0 +1,50 @@
+.about-us-main-title {
+  font-size: 2.75rem;
+  font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
+  letter-spacing: normal;
+  font-weight: bolder;
+  color: #323648;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 675px;
+  max-width: 675px;
+  margin-top: 5rem;
+}
+
+.about-us-main-text {
+  font-size: 1.25rem;
+  font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
+  letter-spacing: normal;
+  color: #5b5e6d;
+  min-width: 685px;
+  max-width: 685px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+.about-us-main-image {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width : 767px) {
+  .about-us-main-title {
+    letter-spacing: normal;
+    font-weight: bolder;
+    min-width: 0px;
+    max-width: 767px;
+  }
+
+  .about-us-main-text {
+    letter-spacing: normal;
+    min-width: 0px;
+    max-width: 767px;
+  }
+
+  .about-us-main-image {
+    width: 100%;
+    height: auto;
+  }
+}
