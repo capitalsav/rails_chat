@@ -22,7 +22,7 @@ import 'images/welcome_index_logo_3.png'
 import 'images/welcome_index_logo_4.png'
 import 'images/welcome_index_logo_5.png'
 import 'images/welcome_index_logo_6.png'
-import 'images/welcome_about_us_main.png'
+import 'images/welcome_about_us_main.jpg'
 
 console.log('Hello World from Webpacker');
 
