@@ -51,9 +51,9 @@
           to find fault with a man who chooses to enjoy a pleasure
           that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
       .d-none.d-md-block.col-md-6
-        = image_tag(asset_pack_path("images/welcome_about_us_text_img_top.svg"), class: 'about-us-text-top-image')
+        = image_tag(asset_pack_path("images/welcome_about_us_text_img_top.svg"), class: 'about-us-text-image')
       .d-block.d-md-none.d-lg-none.d-xl-none
-        = image_tag(asset_pack_path("images/welcome_about_us_text_img_top.svg"), class: 'about-us-text-top-image')
+        = image_tag(asset_pack_path("images/welcome_about_us_text_img_top.svg"), class: 'about-us-text-image')
       .d-block.d-md-none.d-lg-none.d-xl-none
         .container
           .about-us-text-picture-top-title
@@ -74,7 +74,22 @@
               %a{:href => "#"} But who has any right
             to find fault with a man who chooses to enjoy a pleasure
             that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-.about-us-text-picture-bottom
+.about-us-text-picture-bottom.mt-5.pt-5
+  .container
+    .row
+      .col-12.col-lg-6
+        = image_tag(asset_pack_path("images/welcome_about_us_text_img_bottom.jpg"), class: 'about-us-text-image')
+      .col-12.col-lg-6.mt-5
+        .container
+          .about-us-text-picture-top-title
+            But I must explain to you how
+          .about-us-text-picture-top-desc
+            No one rejects, dislikes, or avoids pleasure itself, because it is pleasure,
+            but because those who do not know how to pursue pleasure rationally encounter consequences
+            that are extremely painful. Nor again is there anyone who loves or pursues or desires
+            to obtain pain of itself, because it is pain, but because occasionally circumstances occur
+            in which toil and pain can procure him some great pleasure.
+          %button.view-careers-btn VIEW CAREERS
   .container
 = render 'layouts/footer'
 
