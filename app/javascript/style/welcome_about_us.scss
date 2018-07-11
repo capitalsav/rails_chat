@@ -29,6 +29,31 @@
   height: auto;
 }
 
+.about-us-count-title {
+  font-family: "Times New Roman",Georgia,serif;
+  color: #323648;
+  letter-spacing: normal;
+  font-size: 2rem;
+  font-weight: bolder;
+  line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 385px;
+  max-width: 385px;
+}
+
+.about-us-count-text-title {
+  color: $welcome-link-button-background;
+  font-family: "Times New Roman",Georgia,serif;
+  font-weight: 700;
+  font-size: 5.5rem;
+}
+
+.about-us-count-text-desc {
+  color: #5b5e6d;
+  font-family: appleLogo,sans-serif;
+}
+
 @media only screen and (max-width : 767px) {
   .about-us-main-title {
     letter-spacing: normal;
@@ -46,5 +71,10 @@
   .about-us-main-image {
     width: 100%;
     height: auto;
+  }
+
+  .about-us-count-title {
+    min-width: 0px;
+    max-width: 385px;
   }
 }
