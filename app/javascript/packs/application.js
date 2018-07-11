@@ -23,6 +23,8 @@ import 'images/welcome_index_logo_4.png'
 import 'images/welcome_index_logo_5.png'
 import 'images/welcome_index_logo_6.png'
 import 'images/welcome_about_us_main.jpg'
+import 'images/welcome_about_us_text_img_top.svg'
+import 'images/welcome_about_us_text_img_bottom.jpg'
 
 console.log('Hello World from Webpacker');
 
