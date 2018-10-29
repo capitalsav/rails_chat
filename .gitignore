@@ -20,7 +20,6 @@
 .idea/
 .ruby-version
 .ruby-gemset
-config/database.yml
 public/packs
 public/packs-test
 yarn-debug.log*
