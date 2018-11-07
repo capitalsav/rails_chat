@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { confirmations: 'confirmations' }
+  devise_for :users
 
   resources :chat_rooms, only: [:new, :create, :show, :index]
   resources :private_chat_rooms, except: [:update, :edit, :destroy]
