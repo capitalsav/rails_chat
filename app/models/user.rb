@@ -15,4 +15,7 @@ class User < ApplicationRecord
   has_many :multi_user_memberships
   has_many :multi_user_private_chat_rooms, through: :multi_user_memberships
   has_many :multi_user_messages, dependent: :destroy
+
+  has_many :users, class_name: 'Contact', foreign_key: 'user_id'
+  has_many :contacts, class_name: 'Contact', foreign_key: 'contact_id'
 end
