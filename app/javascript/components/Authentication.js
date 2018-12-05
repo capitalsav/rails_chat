@@ -6,18 +6,11 @@ class Authentication extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: '',
-            displayName: '',
-            firstName: '',
-            lastName: ''
+            password: ''
         };
 
         this.changeEmail = this.changeEmail.bind(this);
         this.changePassword = this.changePassword.bind(this);
-        this.changeDisplayName = this.changeDisplayName.bind(this);
-        this.changeFirstName = this.changeFirstName.bind(this);
-        this.changeLastName = this.changeLastName.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     changeEmail(newEmail) {
@@ -32,34 +25,13 @@ class Authentication extends React.Component {
         })
     }
 
-    changeDisplayName(newDisplayName) {
-        this.setState({
-            displayName: newDisplayName.target.value
-        })
-    }
-
-    changeFirstName(newFirstName) {
-        this.setState({
-            firstName: newFirstName.target.value
-        })
-    }
-
-    changeLastName(newLastName) {
-        this.setState({
-            lastName: newLastName.target.value
-        })
-    }
-
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.state);
-        axios.post('/api/v1/register', {
+        axios.post('/api/v1/token', {
             user: {
                 email: this.state.email,
-                password: this.state.password,
-                display_name: this.state.displayName,
-                first_name: this.state.firstName,
-                last_name: this.state.lastName
+                password: this.state.password
             }
         })
         .then(function (response) {
@@ -81,21 +53,6 @@ class Authentication extends React.Component {
                 <label>
                     Password:
                     <input type="password" value={this.state.password} onChange={this.changePassword} />
-                </label>
-                <br/>
-                <label>
-                    Display Name:
-                    <input type="text" value={this.state.displayName} onChange={this.changeDisplayName} />
-                </label>
-                <br/>
-                <label>
-                    FirstName:
-                    <input type="text" value={this.state.firstName} onChange={this.changeFirstName} />
-                </label>
-                <br/>
-                <label>
-                    LastName:
-                    <input type="text" value={this.state.lastName} onChange={this.changeLastName} />
                 </label>
                 <br/>
                 <input type="submit" value="Submit" />
