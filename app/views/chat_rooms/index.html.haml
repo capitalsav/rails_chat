@@ -2,7 +2,7 @@
   .container-fluid
     .row
       .col-3
-        = react_component("ContactsMenu", { contacts_: current_user.users.map {|x| x}})
+        = react_component("ContactsMenu")
       .col-9
         %h1 Chat rooms
         - if user_signed_in?
