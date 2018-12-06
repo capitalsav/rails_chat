@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   resources :multi_user_memberships
   mount ActionCable.server => '/cable'
   root 'chat_rooms#index'
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      get 'contacts', to: 'contacts#index'
+    end
+  end
 end
