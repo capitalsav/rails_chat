@@ -5,21 +5,21 @@ class ContactsMenu extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     contacts: ''
-        // };
-
-        this.componentDidMount = this.componentDidMount.bind(this);
+        this.state = {
+            users: []
+        }
     }
 
     componentDidMount() {
+        let self = this;
+
         axios.get('/api/v1/contacts', {
 
         })
         .then(function (response) {
             console.log(response);
-            this.setState({
-                contacts : response.data
+            self.setState({
+                users : response.data.contacts
             });
         })
         .catch(function (error) {
@@ -27,17 +27,15 @@ class ContactsMenu extends React.Component {
         });
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        // console.log(this.state);
-
-    }
 
     render() {
+        console.log(this.state.users);
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type="submit" value="Submit" />
-            </form>
+            <ul>
+                {this.state.users.map(function(user){
+                    return <li>{user.email}</li>;
+                })}
+            </ul>
         );
     }
 }
