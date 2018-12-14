@@ -1,4 +1,5 @@
 import React from 'react'
+import Contact from "./Contact";
 
 
 class ContactsList extends React.Component {
@@ -6,7 +7,7 @@ class ContactsList extends React.Component {
         return (
             <ul>
                 {this.props.users.map(function(user){
-                    return <li>{user.email}</li>;
+                    return <Contact user={user}/>
                 })}
             </ul>
         );
