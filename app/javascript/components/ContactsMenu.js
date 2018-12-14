@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import ContactsList from "./Contacts/ContactsList";
 
 class ContactsMenu extends React.Component {
     constructor(props) {
@@ -14,10 +15,8 @@ class ContactsMenu extends React.Component {
         let self = this;
 
         axios.get('/api/v1/contacts', {
-
         })
         .then(function (response) {
-            console.log(response);
             self.setState({
                 users : response.data.contacts
             });
@@ -29,13 +28,8 @@ class ContactsMenu extends React.Component {
 
 
     render() {
-        console.log(this.state.users);
         return (
-            <ul>
-                {this.state.users.map(function(user){
-                    return <li>{user.email}</li>;
-                })}
-            </ul>
+            <ContactsList users={this.state.users}/>
         );
     }
 }
