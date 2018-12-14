@@ -3,8 +3,7 @@ class Api::V1::ContactsController < ApplicationController
 
   def index
     if current_user
-      render json: {contacts: current_user.users.map {|x| User.find_by(id: x.contact_id)} +
-          current_user.contacts.map {|x| User.find_by(id: x.user_id)}} , status: :ok
+      render json: { contacts: Contact.current_user_contacts(current_user) }, status: :ok
     else
       render json: {}, status: :bad_request
     end
