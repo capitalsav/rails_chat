@@ -1,10 +1,11 @@
 class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          :validatable, :confirmable
-
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :display_name, presence: true
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
 
