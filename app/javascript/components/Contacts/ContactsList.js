@@ -5,11 +5,11 @@ import Contact from "./Contact";
 class ContactsList extends React.Component {
     render() {
         return (
-            <ul>
+            <div>
                 {this.props.users.map(function(user){
-                    return <Contact user={user}/>
+                    return <Contact key={user.email} user={user}/>
                 })}
-            </ul>
+            </div>
         );
     }
 }
