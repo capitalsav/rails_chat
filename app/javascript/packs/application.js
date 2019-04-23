@@ -14,7 +14,7 @@ import 'bootstrap/dist/js/bootstrap';
 import 'packs/actioncable_connect'
 import 'packs/header'
 import 'style/application.scss'
-import 'images/default_avatar.png'
+// import 'images/default_avatar.png'
 import 'images/home_illo.png'
 import 'images/welcome_index_logo_1.png'
 import 'images/welcome_index_logo_2.png'
