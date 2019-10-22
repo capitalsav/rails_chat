@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191022143006) do
+ActiveRecord::Schema.define(version: 20191022150820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,15 +21,6 @@ ActiveRecord::Schema.define(version: 20191022143006) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_chat_rooms_on_user_id"
-  end
-
-  create_table "memberships", force: :cascade do |t|
-    t.bigint "private_chat_room_id"
-    t.bigint "owner_id"
-    t.bigint "member_id"
-    t.index ["member_id"], name: "index_memberships_on_member_id"
-    t.index ["owner_id"], name: "index_memberships_on_owner_id"
-    t.index ["private_chat_room_id"], name: "index_memberships_on_private_chat_room_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -74,9 +65,6 @@ ActiveRecord::Schema.define(version: 20191022143006) do
   end
 
   add_foreign_key "chat_rooms", "users"
-  add_foreign_key "memberships", "private_chat_rooms"
-  add_foreign_key "memberships", "users", column: "member_id"
-  add_foreign_key "memberships", "users", column: "owner_id"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
 end
