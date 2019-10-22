@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191022080722) do
+ActiveRecord::Schema.define(version: 20191022100010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,16 +49,6 @@ ActiveRecord::Schema.define(version: 20191022080722) do
     t.datetime "updated_at", null: false
     t.index ["multi_user_private_chat_room_id"], name: "index_multi_user_memberships_on_multi_user_private_chat_room_id"
     t.index ["user_id"], name: "index_multi_user_memberships_on_user_id"
-  end
-
-  create_table "multi_user_messages", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id"
-    t.bigint "multi_user_private_chat_room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["multi_user_private_chat_room_id"], name: "index_multi_user_messages_on_multi_user_private_chat_room_id"
-    t.index ["user_id"], name: "index_multi_user_messages_on_user_id"
   end
 
   create_table "multi_user_private_chat_rooms", force: :cascade do |t|
@@ -108,7 +98,5 @@ ActiveRecord::Schema.define(version: 20191022080722) do
   add_foreign_key "messages", "users"
   add_foreign_key "multi_user_memberships", "multi_user_private_chat_rooms"
   add_foreign_key "multi_user_memberships", "users"
-  add_foreign_key "multi_user_messages", "multi_user_private_chat_rooms"
-  add_foreign_key "multi_user_messages", "users"
   add_foreign_key "multi_user_private_chat_rooms", "users"
 end
