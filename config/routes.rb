@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  get 'static_pages/chats'
+
   devise_for :users
   mount ActionCable.server => '/cable'
-  root 'chat_rooms#index'
+  root 'static_pages#chat_rooms'
 end
