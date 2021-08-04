@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'haml-rails', '~> 1.0'
+gem 'haml-rails', '~> 2.0'
 gem 'redis', '~> 3.2'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
