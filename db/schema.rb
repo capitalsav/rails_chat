@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_105833) do
+ActiveRecord::Schema.define(version: 2021_08_12_151129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(version: 2018_05_24_105833) do
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.bigint "user_id"
-    t.bigint "chat_room_id"
+    t.bigint "messageable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.string "messageable_type"
+    t.index ["messageable_id"], name: "index_messages_on_messageable_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -114,7 +115,7 @@ ActiveRecord::Schema.define(version: 2018_05_24_105833) do
   add_foreign_key "memberships", "private_chat_rooms"
   add_foreign_key "memberships", "users", column: "member_id"
   add_foreign_key "memberships", "users", column: "owner_id"
-  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "chat_rooms", column: "messageable_id"
   add_foreign_key "messages", "users"
   add_foreign_key "multi_user_memberships", "multi_user_private_chat_rooms"
   add_foreign_key "multi_user_memberships", "users"
