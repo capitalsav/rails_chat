@@ -1,13 +1,5 @@
 # Socket Chat
 
-## Project description:
-- This project is a clone of Slack application, based on RubyOnRails.
-- The main purpose of this project are:
-    - simple scientific researches to check practice ability of creation complicated project like Slack with RubyOnRails
-    - improve skills of software developers, who will contribute this project
-    - share progress and experience with other developers and learn from them
-- This project can digress from Slack principles in some parts and don't guarantee to 100% equality
-
 ## Technical details
 
 - ruby 2.4.1
