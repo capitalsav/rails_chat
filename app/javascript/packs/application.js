@@ -15,13 +15,6 @@ import 'packs/actioncable_connect'
 import 'packs/header'
 import 'style/application.scss'
 import 'images/default_avatar.png'
-import 'images/home_illo.png'
-import 'images/welcome_index_logo_1.png'
-import 'images/welcome_index_logo_2.png'
-import 'images/welcome_index_logo_3.png'
-import 'images/welcome_index_logo_4.png'
-import 'images/welcome_index_logo_5.png'
-import 'images/welcome_index_logo_6.png'
 
 console.log('Hello World from Webpacker');
 
