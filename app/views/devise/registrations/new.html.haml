@@ -18,12 +18,11 @@
     .form-group
       = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Password Confirmation'
     .form-group
-      %span.btn{id: 'avatar-sign-up-button'}
-        %p#p-sign-up-avatar
-          %span
-            Choose Avatar
-        \#{f.file_field :avatar, id: 'avatar-sign-up'}
-    .actions
-      = f.submit 'Sign up', class: 'btn btn-default auth-submit'
+      %label.btn.btn-primary.w-100
+        Choose your avatar!
+        %span{:style => "display:none;"}
+          = f.file_field :avatar
+    .form-group
+      = f.submit 'Sign up', class: 'btn btn-success w-100'
     .text-center
       = render "devise/shared/links"
