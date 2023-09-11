@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# ruby 2.7.1
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
@@ -57,7 +57,7 @@ end
 group :test do
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'factory_bot_rails'
-  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.7'
   gem 'shoulda-matchers', '~> 3.1'
