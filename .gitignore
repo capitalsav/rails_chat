@@ -28,3 +28,7 @@ public/uploads
 .env
 localhost.crt
 localhost.key
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+dist/
