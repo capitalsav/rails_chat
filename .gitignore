@@ -32,3 +32,5 @@ localhost.key
 !/app/assets/builds/.keep
 
 dist/
+
+/config/credentials/development.key
