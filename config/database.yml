@@ -1,18 +1,22 @@
-login: &login
+default: &default
   adapter: postgresql
   encoding: utf8
   host: localhost
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PWD'] %>
+
+devtest: &devtest
+  username: <%= Rails.application.credentials.pg.database_user %>
+  password: <%= Rails.application.credentials.pg.database_pwd %>
 
 development:
-  <<: *login
+  <<: *default
+  <<: *devtest
   database: rails_chat_development
 
 test:
-  <<: *login
+  <<: *default
+  <<: *devtest
   database: rails_chat_test
 
 production:
-  <<: *login
+  <<: *default
   database: rails_chat_production
