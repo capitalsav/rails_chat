@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  devise_scope :user do
+    get 'users/sign_out' => 'devise/sessions#destroy'
+  end
 
   resources :chat_rooms, only: [:new, :create, :show, :index]
   resources :private_chat_rooms, except: [:update, :edit, :destroy]

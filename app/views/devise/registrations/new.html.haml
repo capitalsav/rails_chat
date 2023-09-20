@@ -1,32 +1,43 @@
-.website-content
-  .container
-    .row
-      .col-xs-12
-        %h2.text-center.auth-head-text Sign up
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          = devise_error_messages!
-          .field
-            = f.text_field :first_name, class: 'auth-input', placeholder: 'First name'
-          .field
-            = f.text_field :last_name, class: 'auth-input', placeholder: 'Last name'
-          .field
-            = f.text_field :display_name, class: 'auth-input', placeholder: 'Nickname'
-          .field
-            = f.email_field :email, class: 'auth-input', placeholder: 'Email'
-          .field
-            = f.password_field :password, autocomplete: "off", class: 'auth-input', id: 'sign-up-pwd-input', placeholder: 'Password'
-            - if @minimum_password_length
-              .pwd-tooltip-text
-                = "#{@minimum_password_length} characters minimum"
-          .field
-            = f.password_field :password_confirmation, autocomplete: "off", class: 'auth-input', placeholder: 'Password Confirmation'
-          .field
-            %span.btn.btn-file{id: 'avatar-sign-up-button'}
-              %p#p-sign-up-avatar
-                %span
-                  Choose Avatar
-              \#{f.file_field :avatar, id: 'avatar-sign-up'}
-          .actions
-            = f.submit 'Sign up', class: 'btn btn-default auth-submit'
-        .text-center.auth-links
-          = render "devise/shared/links"
+.container
+  .d-flex.align-items-center.justify-content-center.vh-100
+    .form-border
+      .d-flex.justify-content-center.mb-3
+        %h4 Sign up
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :first_name
+          = f.text_field :first_name, class: 'form-control', placeholder: 'First name'
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :last_name
+          = f.text_field :last_name, class: 'form-control', placeholder: 'Last name'
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :display_name
+          = f.text_field :display_name, class: 'form-control', placeholder: 'Nickname'
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :email
+          = f.email_field :email, class: 'form-control', placeholder: 'Email'
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :password
+          = f.password_field :password, autocomplete: "off", class: 'form-control', id: 'sign-up-pwd-input', placeholder: 'Password'
+          - if @minimum_password_length
+            .d-flex.justify-content-center.mt-1.mb-1
+              = "#{@minimum_password_length} characters minimum"
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Password Confirmation'
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            Choose Avatar
+          .d-flex.justify-content-center.mb-1
+            = f.file_field :avatar, id: 'avatar-sign-up', class: 'w-75'
+        .mb-3.d-flex.justify-content-center
+          = f.submit 'Sign up', class: 'btn btn-success w-100'
+      .text-center.auth-links
+        = render "devise/shared/links"

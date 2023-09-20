@@ -1,18 +1,23 @@
-.website-content
-  .container
-    .row
-      .col-xs-12
-        %h2.text-center.auth-head-text Log in
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .field
-            = f.email_field :email, class: 'auth-input', id: 'login-input', placeholder: 'Email'
-          .field
-            = f.password_field :password, autocomplete: "off", class: 'auth-input', id: 'login-pwd-input', placeholder: 'Password'
+.container
+  .d-flex.align-items-center.justify-content-center.vh-100
+    .form-border
+      .d-flex.justify-content-center.mb-3
+        %h4 Log in
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :email
+          = f.email_field :email, class: 'form-control', id: 'login-input', placeholder: 'Email'
+        .mb-3
+          .d-flex.justify-content-center.mb-1
+            = f.label :password
+          = f.password_field :password, autocomplete: "off", class: 'form-control', id: 'login-pwd-input', placeholder: 'Password'
+        .mb-3
           - if devise_mapping.rememberable?
-            .field.remember-me
+            .d-flex.justify-content-center
               = f.check_box :remember_me
               = f.label :remember_me
-          .actions
-            = f.submit "Log in", class: 'btn btn-default auth-submit'
+        .mb-3.d-flex.justify-content-center
+          = f.submit "Log in", class: 'btn btn-success w-100'
         .text-center.auth-links
           = render "devise/shared/links"
