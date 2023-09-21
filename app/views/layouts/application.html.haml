@@ -13,8 +13,9 @@
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
     %link{:href => "https://fonts.googleapis.com/css?family=Kreon", :rel => "stylesheet"}/
   %body
-    = render 'layouts/header' if controller.controller_name == 'welcome_pages'
-    = yield
-    = yield :footer_layout
+    .container-fluid
+      = render 'layouts/header'
+      = yield
+      = yield :footer_layout
 
     -#= render 'layouts/footer' unless no_footer_page(controller.controller_name, controller.action_name)
