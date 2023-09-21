@@ -3,12 +3,6 @@
     .row
       .col-xs-12
         %h1 Chat rooms
-        - if user_signed_in?
-          %li
-            = link_to('Logout', destroy_user_session_path, method: :delete)
-        - else
-          %li
-            = link_to('Login', new_user_session_path)
         %p.lead= link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary'
         %ul
           = render @chat_rooms
