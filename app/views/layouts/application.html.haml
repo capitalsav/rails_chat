@@ -14,7 +14,8 @@
     %link{:href => "https://fonts.googleapis.com/css?family=Kreon", :rel => "stylesheet"}/
   %body
     .container-fluid
-      = render 'layouts/header'
+      -if current_user
+        = render 'layouts/header'
       = yield
       = yield :footer_layout
 
