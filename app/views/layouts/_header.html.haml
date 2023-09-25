@@ -14,4 +14,7 @@
             %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
         .d-flex
           - if user_signed_in?
+            = link_to('Edit account', edit_user_registration_path, method: :get, class: 'form-control me-2')
+        .d-flex
+          - if user_signed_in?
             = link_to('Logout', destroy_user_session_path, method: :delete, class: 'form-control me-2')
