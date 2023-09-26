@@ -1,0 +1,10 @@
+= form_for @direct_message do |f|
+  - if @direct_message.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@direct_message.errors.count, "error")} prohibited this direct_message from being saved:"
+      %ul
+        - @direct_message.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'

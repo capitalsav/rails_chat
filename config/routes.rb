@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :direct_messages
   devise_for :users
   
   devise_scope :user do

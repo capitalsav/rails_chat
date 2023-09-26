@@ -1,0 +1,19 @@
+%h1 Listing direct_messages
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @direct_messages.each do |direct_message|
+      %tr
+        %td= link_to 'Show', direct_message
+        %td= link_to 'Edit', edit_direct_message_path(direct_message)
+        %td= link_to 'Destroy', direct_message, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Direct message', new_direct_message_path
