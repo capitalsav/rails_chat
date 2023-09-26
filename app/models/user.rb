@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,
          :validatable, :confirmable
   validates_presence_of :first_name, :last_name, :display_name
+
+  has_many :direct_messages_relations
+  has_many :direct_messages, through: :direct_messages_relations
+
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
 
